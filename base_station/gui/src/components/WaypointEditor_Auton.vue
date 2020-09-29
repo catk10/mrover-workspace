@@ -33,6 +33,7 @@
         Waypoints Traveled: {{nav_status.completed_wps}}/{{nav_status.total_wps}}<br>
         Radio Repeater Dropped: {{repeater_dropped}}
       </span>
+      <OdometryReading v-bind:odom="odom"/>
     </div>
     <div class="box1">
       <h3>All Waypoints</h3>
@@ -53,6 +54,7 @@
 import Checkbox from './Checkbox.vue'
 import draggable from 'vuedraggable'
 import {convertDMS} from '../utils.js';
+import OdometryReading from './OdometryReading.vue'
 import WaypointItem from './WaypointItem_Auton.vue'
 import {mapMutations, mapGetters} from 'vuex'
 import _ from 'lodash';
@@ -276,7 +278,8 @@ export default {
   components: {
     draggable,
     WaypointItem,
-    Checkbox
+    Checkbox,
+    OdometryReading
   }
 
 }
@@ -287,7 +290,7 @@ export default {
   .wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10.5rem 1fr;
+    grid-template-rows: 15rem 1fr;
     grid-gap: 6px;
     height: 100%;
   }
@@ -304,10 +307,11 @@ export default {
     border-radius: 5px;
     padding: 10px;
     border: 1px solid black;
-    height: 150px;
+    height: 200px;
     overflow: auto;
   }
-    .box1 {
+
+  .box1 {
     border-radius: 5px;
     padding: 10px;
     border: 1px solid black;
