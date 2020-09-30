@@ -367,7 +367,7 @@ export default {
   }
 
   .cameras{
-    width: 400px;
+    width: 100%;
     display: block;
   }
 

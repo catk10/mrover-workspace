@@ -21,6 +21,7 @@ export default {
 <style scoped>
 
   .main-content{
+    margin-top: 0.5rem;
     border-radius: 5px;
     padding: 10px;
     border: 1px solid black;
