@@ -34,6 +34,9 @@
         Radio Repeater Dropped: {{repeater_dropped}}
       </span>
       <OdometryReading v-bind:odom="odom"/>
+      <div class="Joystick light-bg">
+        <AutonJoystickReading v-bind:Joystick="Joystick"/>
+      </div>
     </div>
     <div class="box1">
       <h3>All Waypoints</h3>
@@ -55,6 +58,7 @@ import Checkbox from './Checkbox.vue'
 import draggable from 'vuedraggable'
 import {convertDMS} from '../utils.js';
 import OdometryReading from './OdometryReading.vue'
+import AutonJoystickReading from './AutonJoystickReading.vue'
 import WaypointItem from './WaypointItem_Auton.vue'
 import {mapMutations, mapGetters} from 'vuex'
 import _ from 'lodash';
@@ -70,6 +74,10 @@ export default {
       type: Object,
       required: true
     },
+    Joystick: {
+      type: Object,
+      required: true
+    }
   },
 
   data () {
@@ -279,7 +287,8 @@ export default {
     draggable,
     WaypointItem,
     Checkbox,
-    OdometryReading
+    OdometryReading,
+    AutonJoystickReading
   }
 
 }
@@ -290,7 +299,7 @@ export default {
   .wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 15rem 1fr;
+    grid-template-rows: 20rem 1fr;
     grid-gap: 6px;
     height: 100%;
   }
@@ -307,7 +316,7 @@ export default {
     border-radius: 5px;
     padding: 10px;
     border: 1px solid black;
-    height: 200px;
+    height: 300px;
     overflow: auto;
   }
 

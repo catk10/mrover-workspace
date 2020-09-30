@@ -31,16 +31,13 @@
       <!-- <div class="box odom light-bg">
         <OdometryReading v-bind:odom="odom"/>
       </div> -->
-      <div class="box Joystick light-bg">
-        <AutonJoystickReading v-bind:Joystick="Joystick"/>
-    </div>
   </div>
   </div>
     <div class="box map light-bg">
       <RoverMap v-bind:odom="odom"/>
     </div>
     <div class="box waypoints light-bg">
-      <WaypointEditor v-bind:odom="odom" v-bind:repeater_dropped="repeater_dropped"/>
+      <WaypointEditor v-bind:odom="odom" v-bind:repeater_dropped="repeater_dropped" v-bind:Joystick="Joystick"/>
     </div>
      <!-- <div class="box raw_sensors light-bg">
       <RawSensorData v-bind:GPS="GPS" v-bind:IMU="IMU"/>
@@ -58,7 +55,7 @@ import ArmControls from './ArmControls.vue'
 import DriveControls from './DriveControls.vue'
 import EncoderCounts from './EncoderCounts.vue'
 import WaypointEditor from './WaypointEditor_Auton.vue'
-import AutonJoystickReading from './AutonJoystickReading.vue'
+// import AutonJoystickReading from './AutonJoystickReading.vue'
 import RawSensorData from './RawSensorData.vue'
 import LCMBridge from 'lcm_bridge_client/dist/bridge.js'
 
@@ -252,7 +249,7 @@ export default {
     DriveControls,
     EncoderCounts,
     // OdometryReading,
-    AutonJoystickReading,
+    // AutonJoystickReading,
     RawSensorData,
     WaypointEditor
   }
