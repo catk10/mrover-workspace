@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <!-- Map goes here       -->
-
+    <div class = "wrapper">
     <l-map ref="map" class="map" :zoom="15" :center="center">
       <l-control-scale :imperial="false"/>
       <l-tile-layer :url="url" :attribution="attribution"/>
@@ -17,7 +17,8 @@
       <l-polyline :lat-lngs="polylinePath" :color="'red'" :dash-array="'5, 5'"/>
       <l-polyline :lat-lngs="odomPath" :color="'blue'"/>
     </l-map>
-
+  
+  </div>
   </div>
 </template>
 
@@ -136,6 +137,18 @@ export default {
 .map {
   height: 100%;
   width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 20px;
+  grid-template-areas:
+    "header"
+    "servos";
+  font-family: sans-serif;
+  height: 100%;
 }
 
 .wrap {
