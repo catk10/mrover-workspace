@@ -142,7 +142,7 @@ export default {
 .wrap {
   display: flex;
   align-items: center;
-  height: 90%;
+  height: 100%;
 }
 
 .custom-tooltip {
