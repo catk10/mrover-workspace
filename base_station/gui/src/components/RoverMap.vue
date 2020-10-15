@@ -137,6 +137,6 @@ export default {
 .wrap {
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 90%;
 }
 </style>
