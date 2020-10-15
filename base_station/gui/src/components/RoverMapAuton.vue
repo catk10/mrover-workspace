@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <!-- Map goes here       -->
-    
+
     <l-map ref="map" class="map" :zoom="15" :center="center">
       <l-control-scale :imperial="false"/>
       <l-tile-layer :url="url" :attribution="attribution"/>
@@ -142,7 +142,7 @@ export default {
 .wrap {
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 90%;
 }
 
 .custom-tooltip {
