@@ -135,7 +135,7 @@ export default {
 
 <style scoped>
 .map {
-  height: 100%;
+  height: 90%;
   width: 100%;
 }
 
@@ -143,13 +143,6 @@ export default {
   display: flex;
   align-items: center;
   height: 100%;
-  grid-gap: 10px;
-  grid-template-columns: 1fr;
-  grid-template-rows: 30px 20px;
-  grid-template-areas:
-    "header"
-    "servos";
-  font-family: sans-serif;
 }
 
 .custom-tooltip {
