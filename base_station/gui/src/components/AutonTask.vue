@@ -36,11 +36,9 @@
     </div>
   </div>
   </div>
-    <div class="map-wrapper">
-      <div class="box map light-bg">
-        <RoverMap v-bind:odom="odom"/>
-      </div>
-    </div><!-- .map-wrapper -->
+  <div class="box map light-bg">
+    <RoverMap v-bind:odom="odom"/>
+  </div>
     <div class="box waypoints light-bg">
       <WaypointEditor v-bind:odom="odom" v-bind:repeater_dropped="repeater_dropped"/>
     </div>
@@ -424,17 +422,5 @@ export default {
     display: inline;
     float: left;
     padding: 0px 10px 0px 0px;
-  }
-
-  .map-wrapper {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 60px 20px;
-    grid-template-areas:
-        "header"
-        "servos";
-    font-family: sans-serif;
-    height: 100%;
   }
 </style>
