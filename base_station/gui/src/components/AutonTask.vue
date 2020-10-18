@@ -266,7 +266,7 @@ export default {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px 3fr 1fr 2fr 70px 60px;
+    grid-template-rows: 60px 3fr 1fr 2fr 70px 60px;
     grid-template-areas: "header header" "map waypoints" "map waypoints" "data waypoints" "raw_sensors waypoints";
     font-family: sans-serif;
     height: auto;
