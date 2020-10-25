@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="odom-wrap">
     <p>Current odometry reading:</p>
     <div>
       <p>{{formatted_odom.lat.d}}º</p>
@@ -52,14 +52,15 @@ export default {
 </script>
 
 <style scoped>
-  .wrap {
+  .odom-wrap {
       padding: 0px;
       padding-left: 5px;
       padding-right: 5px;
       border: none;
+      margin-top: 0.5rem;
   }
 
-  .wrap p {
+  .odom-wrap p {
     display: inline;
   }
 </style>
