@@ -28,23 +28,20 @@
       <Cameras v-bind:servosData="lastServosMessage" v-bind:connections="connections.cameras"/>
     </div>
     <div class="box2">
-      <div class="box odom light-bg">
+      <!-- <div class="box odom light-bg">
         <OdometryReading v-bind:odom="odom"/>
-      </div>
-      <div class="box Joystick light-bg">
-        <AutonJoystickReading v-bind:Joystick="Joystick"/>
+      </div> -->
+  </div>
+  </div>
+    <div class="box map light-bg">
+      <RoverMap v-bind:odom="odom"/>
     </div>
-  </div>
-  </div>
-  <div class="box map light-bg">
-    <RoverMap v-bind:odom="odom"/>
-  </div>
     <div class="box waypoints light-bg">
-      <WaypointEditor v-bind:odom="odom" v-bind:repeater_dropped="repeater_dropped"/>
+      <WaypointEditor v-bind:odom="odom" v-bind:repeater_dropped="repeater_dropped" v-bind:Joystick="Joystick"/>
     </div>
-     <div class="box raw_sensors light-bg">
+     <!-- <div class="box raw_sensors light-bg">
       <RawSensorData v-bind:GPS="GPS" v-bind:IMU="IMU"/>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -53,12 +50,12 @@ import { mapGetters, mapMutations } from 'vuex'
 import Cameras from './Cameras.vue'
 import RoverMap from './RoverMapAuton.vue'
 import CommIndicator from './CommIndicator.vue'
-import OdometryReading from './OdometryReading.vue'
+// import OdometryReading from './OdometryReading.vue'
 import ArmControls from './ArmControls.vue'
 import DriveControls from './DriveControls.vue'
 import EncoderCounts from './EncoderCounts.vue'
 import WaypointEditor from './WaypointEditor_Auton.vue'
-import AutonJoystickReading from './AutonJoystickReading.vue'
+// import AutonJoystickReading from './AutonJoystickReading.vue'
 import RawSensorData from './RawSensorData.vue'
 import LCMBridge from 'lcm_bridge_client/dist/bridge.js'
 
@@ -83,7 +80,6 @@ export default {
         bearing_deg: 0,
         speed: 0
       },
-
 
       connections: {
         websocket: false,
@@ -252,8 +248,8 @@ export default {
     ArmControls,
     DriveControls,
     EncoderCounts,
-    OdometryReading,
-    AutonJoystickReading,
+    // OdometryReading,
+    // AutonJoystickReading,
     RawSensorData,
     WaypointEditor
   }
@@ -266,7 +262,7 @@ export default {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 60px 3fr 1fr 2fr 70px 60px;
+    grid-template-rows: 60px 1fr 1.5fr 2fr 70px 60px;
     grid-template-areas: "header header" "map waypoints" "map waypoints" "data waypoints" "raw_sensors waypoints";
     font-family: sans-serif;
     height: auto;
@@ -371,7 +367,7 @@ export default {
   }
 
   .cameras{
-    width: 400px;
+    width: 100%;
     display: block;
   }
 
